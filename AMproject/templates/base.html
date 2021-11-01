@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알동말동</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}" type="text/css">
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    <div id="top">
+        <h3>알동말동</h3>
+    </div>
+    {% block content %}
+    {% endblock%}
+    <div id='bottom'>
+        project team ??? 이지원 박윤진<br>
+        copyrightⓒ 2021 All rights reserved by ???
+    </div>    
+</body>
+</html>
