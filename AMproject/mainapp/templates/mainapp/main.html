@@ -6,8 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    <div>
-        내용이 들어갈 곳 main.html 입니다.
-        test2
+    <div class="button_list"> 
+        <a href="{% url 'mainapp:go_search' %}">야생동물검색</a>
+        <a href="{% url 'sub1app:searchRC' %}">구조센터 찾기</a>
+        <button>구조동물 정보 열람</button>
     </div>
 {% endblock %}

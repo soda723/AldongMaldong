@@ -1,0 +1,13 @@
+.contents{
+    display: flex;
+    flex-direction: column;
+}
+.list_RC{
+    display:flex;
+    flex-direction:column;
+    border: 1px solid gray;
+}
+.data{
+    border: 1px solid pink;
+    padding: 10px;
+}

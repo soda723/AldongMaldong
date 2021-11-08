@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'sub1napp/searchRC.css' %}"  type='text/css'> 
+{% endblock %}
+
+{% block content %}
+    <div class="contents"> 
+        <h1>구조센터 찾기</h1>
+        <form actions="{% url 'sub1app:searchRC' %}" method = "POST">
+            {% csrf_token %}
+            <div class="options">
+                <input type="checkbox" name="regions[]" value="전체" {% if '전체' in regions %}checked{% endif %}> 전체
+                <input type="checkbox" name="regions[]" value="서울" {% if '서울' in regions %}checked{% endif %}> 서울
+                <input type="checkbox" name="regions[]" value="부산" {% if '부산' in regions %}checked{% endif %}> 부산
+                <input type="checkbox" name="regions[]" value="광주" {% if '광주' in regions %}checked{% endif %}> 광주
+                <input type="checkbox" name="regions[]" value="대전" {% if '대전' in regions %}checked{% endif %}> 대전
+                <input type="checkbox" name="regions[]" value="울산" {% if '울산' in regions %}checked{% endif %}> 울산 
+                <input type="checkbox" name="regions[]" value="인천" {% if '인천' in regions %}checked{% endif %}> 인천
+                <input type="checkbox" name="regions[]" value="대구" {% if '대구' in regions %}checked{% endif %}> 대구
+
+                <input type="checkbox" name="regions[]" value="경기" {% if '경기' in regions %}checked{% endif %}> 경기
+                <input type="checkbox" name="regions[]" value="강원" {% if '강원' in regions %}checked{% endif %}> 강원
+                <input type="checkbox" name="regions[]" value="충북" {% if '충북' in regions %}checked{% endif %}> 충북
+                <input type="checkbox" name="regions[]" value="충남" {% if '충남' in regions %}checked{% endif %}> 충남
+                <input type="checkbox" name="regions[]" value="전북" {% if '전북' in regions %}checked{% endif %}> 전북
+                <input type="checkbox" name="regions[]" value="전남" {% if '전남' in regions %}checked{% endif %}> 전남
+                <input type="checkbox" name="regions[]" value="경북" {% if '경북' in regions %}checked{% endif %}> 경북
+                <input type="checkbox" name="regions[]" value="경남" {% if '경남' in regions %}checked{% endif %}> 경남
+                <input type="checkbox" name="regions[]" value="제주" {% if '제주' in regions %}checked{% endif %}> 제주
+                
+                <button type = "submit">검색</button>
+            </div>
+        </form>    
+        <div class="list_RC">
+            {% for data in results %}
+                <div class = "data">
+                    {{ data.name }} 
+                </div>
+            {% empty %}
+                데이터가 없습니다.
+            {% endfor %}
+        </div>
+        <div class="pages">1..2..3..끝</div>
+    </div>
+{% endblock %}

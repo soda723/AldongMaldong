@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'mainapp/go_search.css' %}"  type='text/css'> 
+{% endblock %}
+
+{% block content %}
+<div class="contents">
+    <h1>이미지 검색</h1>
+    <span>사진을 업로드 하세요</span>
+    <button>파일찾기</button>
+    <div class="loadimage">
+        이미지가 있을 공간
+    </div>
+    <button>검색</button>
+</div>
+    
+{% endblock %}

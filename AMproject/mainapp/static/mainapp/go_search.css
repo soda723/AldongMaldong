@@ -1,4 +1,4 @@
-.button_list{
+.contents{
     display: flex;
     flex-direction: column;
 }
