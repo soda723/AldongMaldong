@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'sub1app/center_info.css' %}"  type='text/css'> 
+{% endblock %}
+
+{% block content %}
+    <div class="contents"> 
+        <h1>{{data.name}}</h1>
+        <ul>
+            <li>주소 : {{data.address_road}}</li>
+            <li>운영시간 : {{data.opentime}} ~ {{data.cloasetime}}</li>
+            <li>휴무일 : {{data.dayoff}}</li>
+            <li>전화번호 : {{data.tel}}</li>
+            <li>{{data.explain}}</li>
+            <li>대표자 : {{data.representative}}</li>
+            <li>
+                <table>
+                    <tr>
+                        <td><B>운반상자현황</B></td>
+                        <td>{{ data.box }}</td>
+                    </tr>
+                    <tr>
+                        <td><B>포획장비현황</B></td>
+                        <td>{{ data.equipment_trep }} </td>
+                    </tr>
+                    <tr>
+                        <td><B>진료장비현황</B></td>
+                        <td>{{ data.equipment_medical}}</td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                <table>
+                    <thead>
+                    <tr>
+                        <td><B>수의사인원수</B></td>
+                        <td><B>질병연구자인원수</B></td>
+                        <td><B>진료실수</B></td>
+                        <td><B>수술실수</B></td>
+                        <td><B>영상진단실수</B></td>
+                        <td><B>입원실수</B></td>
+                        <td><B>유전자원보관실수</B></td>
+                        <td><B>재활실수</B></td>
+                        <td><B>격리실수</B></td>
+                        <td><B>구조차량대수</B></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{data.num_Vet}}</td>
+                        <td>{{data.num_Researcher}}</td>
+                        <td>{{data.room_consulation}}</td>
+                        <td>{{data.room_operating}}</td>
+                        <td>{{data.room_image}}</td>
+                        <td>{{data.room_hospital}}</td>
+                        <td>{{data.room_genetic}}</td>
+                        <td>{{data.room_remedical}}</td>
+                        <td>{{data.room_isolated}}</td>
+                        <td>{{data.num_vehicle}}</td>
+                    </tr>
+                    <tbody>
+                </table>
+            </li>
+        </ul>
+        
+    </div>
+{% endblock %}

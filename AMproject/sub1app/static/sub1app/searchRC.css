@@ -7,7 +7,11 @@
     flex-direction:column;
     border: 1px solid gray;
 }
-.data{
-    border: 1px solid pink;
-    padding: 10px;
+.pagination{
+    display:flex;
+    flex-direction:column;
+}
+.data_table{
+    width: 100%;
+    min-width:300px;
 }

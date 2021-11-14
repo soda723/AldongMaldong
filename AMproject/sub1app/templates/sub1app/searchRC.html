@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block style %}
-    <link rel="stylesheet" href="{% static 'sub1napp/searchRC.css' %}"  type='text/css'> 
+    <link rel="stylesheet" href="{% static 'sub1app/searchRC.css' %}"  type='text/css'> 
 {% endblock %}
 
 {% block content %}
@@ -34,14 +34,71 @@
             </div>
         </form>    
         <div class="list_RC">
-            {% for data in results %}
-                <div class = "data">
-                    {{ data.name }} 
-                </div>
-            {% empty %}
-                데이터가 없습니다.
-            {% endfor %}
+            <table class="data_table">
+                <thead>
+                <tr>
+                    <td><B>번호</B></td>
+                    <td><B>센터명</B></td>
+                    <td><B>주소</B></td>
+                    <td><B>전화번호</B></td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for data in results %}
+                <tr>
+                    <td>{{ data.pk }}번</td>
+                    <td><a href="{% url 'sub1app:center_info' data.pk %}">{{ data.name }} </a></td>
+                    <td>{{ data.address_road}}</td>
+                    <td>{{ data.tel }}</td>
+                </tr>
+                {% empty %}
+                    데이터가 없습니다.
+                {% endfor %}
+                <tbody>
+            </table>
         </div>
-        <div class="pages">1..2..3..끝</div>
+        <div class="pages">
+            <ul class="pagination">
+                <!--처음페이지-->
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="?page=1">처음</a>
+                </li>
+                <!-- 이전페이지 -->
+                {% if results.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ results.previous_page_number }}">이전</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+                </li>
+                {% endif %}
+                <!-- 페이지리스트 -->
+                {% for page_number in results.paginator.page_range %}
+                    {% if page_number >= results.number|add:-2 and page_number <= results.number|add:2 %}
+                        {% if page_number == results.number %}
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                        </li>
+                        {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                        </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                <!-- 다음페이지 -->
+                {% if results.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ results.next_page_number }}">다음</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+                </li>
+                {% endif %}
+            </ul>
+            <!-- 페이징처리 끝 -->
+        </div>
     </div>
 {% endblock %}
