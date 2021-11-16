@@ -9,11 +9,29 @@
 <div class="contents">
     <h1>이미지 검색</h1>
     <span>사진을 업로드 하세요</span>
-    <button>파일찾기</button>
-    <div class="loadimage">
-        이미지가 있을 공간
-    </div>
-    <button>검색</button>
+    <form action="{% url 'mainapp:search_result' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" id='files'><br>
+        <div class="thumbnail">
+            <img id="image" style="width: 200px;"/>
+        </div>
+        <input type="submit" value="검색">
+    </form>
+    
+    
 </div>
+<script>
+    document.getElementById("files").onchange = function () {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        document.getElementById("image").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+</script>
     
 {% endblock %}

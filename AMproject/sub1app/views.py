@@ -47,3 +47,7 @@ def center_info(request, obj_pk):
 
     return render(request, 'sub1app/center_info.html', context)
 
+def rescue(request):
+    context={}
+    return render(request,'sub1app/rescue.html', context)
+

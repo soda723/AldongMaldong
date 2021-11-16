@@ -20,6 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# 배포하기전에 키를 바꿔서 보호해야한다. 토큰따로 보관
 SECRET_KEY = 'x)ud(cpuwhzg$6^d$fq^+q5gq&0bbnp550zsbpreih+&2nyyj&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -124,3 +125,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+# 미디어 파일을 관리할 루트 media 디렉터리 
+### /mdeia/파일명으로 저장된다.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
