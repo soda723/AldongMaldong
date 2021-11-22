@@ -15,21 +15,21 @@
             <input type="checkbox" name="regions[]" value="부산" {% if '부산' in regions %}checked{% endif %}> 부산
             <input type="checkbox" name="regions[]" value="광주" {% if '광주' in regions %}checked{% endif %}> 광주
             <input type="checkbox" name="regions[]" value="대전" {% if '대전' in regions %}checked{% endif %}> 대전
-            <input type="checkbox" name="regions[]" value="울산" {% if '울산' in regions %}checked{% endif %}> 울산 
+            <input type="checkbox" name="regions[]" value="울산" {% if '울산' in regions %}checked{% endif %}> 울산<br> 
             <input type="checkbox" name="regions[]" value="인천" {% if '인천' in regions %}checked{% endif %}> 인천
             <input type="checkbox" name="regions[]" value="대구" {% if '대구' in regions %}checked{% endif %}> 대구
 
             <input type="checkbox" name="regions[]" value="경기" {% if '경기' in regions %}checked{% endif %}> 경기
             <input type="checkbox" name="regions[]" value="강원" {% if '강원' in regions %}checked{% endif %}> 강원
             <input type="checkbox" name="regions[]" value="충북" {% if '충북' in regions %}checked{% endif %}> 충북
-            <input type="checkbox" name="regions[]" value="충남" {% if '충남' in regions %}checked{% endif %}> 충남
+            <input type="checkbox" name="regions[]" value="충남" {% if '충남' in regions %}checked{% endif %}> 충남<br>
             <input type="checkbox" name="regions[]" value="전북" {% if '전북' in regions %}checked{% endif %}> 전북
             <input type="checkbox" name="regions[]" value="전남" {% if '전남' in regions %}checked{% endif %}> 전남
             <input type="checkbox" name="regions[]" value="경북" {% if '경북' in regions %}checked{% endif %}> 경북
             <input type="checkbox" name="regions[]" value="경남" {% if '경남' in regions %}checked{% endif %}> 경남
             <input type="checkbox" name="regions[]" value="제주" {% if '제주' in regions %}checked{% endif %}> 제주
             
-            <button type = "submit">검색</button>
+            <button id="searchbtn" type = "submit">검색</button>
         </div>
     </form>    
     <div class="list_RC">
@@ -46,7 +46,7 @@
             {% for data in results %}
             <tr>
                 <td>{{ data.pk }}번</td>
-                <td><a href="{% url 'sub1app:center_info' data.pk %}">{{ data.name }} </a></td>
+                <td class="link"><a href="{% url 'sub1app:center_info' data.pk %}">{{ data.name }} </a></td>
                 <td>{{ data.address_road}}</td>
                 <td>{{ data.tel }}</td>
             </tr>
@@ -59,7 +59,7 @@
     <div class="pages">
         <ul class="pagination">
             <!--처음페이지-->
-            <li class="page-item active" aria-current="page">
+            <li class="page-item">
                 <a class="page-link" href="?page=1">처음</a>
             </li>
             <!-- 이전페이지 -->
@@ -68,7 +68,7 @@
                 <a class="page-link" href="?page={{ results.previous_page_number }}">이전</a>
             </li>
             {% else %}
-            <li class="page-item disabled">
+            <li class="page-item">
                 <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
             </li>
             {% endif %}
@@ -76,7 +76,7 @@
             {% for page_number in results.paginator.page_range %}
                 {% if page_number >= results.number|add:-2 and page_number <= results.number|add:2 %}
                     {% if page_number == results.number %}
-                    <li class="page-item active" aria-current="page">
+                    <li class="page-item-active">
                         <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
                     </li>
                     {% else %}
@@ -92,7 +92,7 @@
                 <a class="page-link" href="?page={{ results.next_page_number }}">다음</a>
             </li>
             {% else %}
-            <li class="page-item disabled">
+            <li class="page-item">
                 <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
             </li>
             {% endif %}

@@ -9,9 +9,45 @@
 }
 .pagination{
     display:flex;
-    flex-direction:column;
+    width: 300px;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+.page-link{
+    color: black;
+    text-decoration-line: none;
+}
+.page-item{
+    
+}
+/* .page-item-disabled a{
+    color: salmon;
+} */
+.page-item-active a{
+    color: salmon;
+    text-decoration-line: underline;
 }
 .data_table{
     width: 100%;
     min-width:300px;
+}
+.link a{
+    color: salmon;
+    text-decoration-line: none;
+}
+.options{
+    display: flex;
+    width: 315px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#searchbtn{
+    background-color: salmon;
+    color: white;
+    border: salmon solid 0.5px;
+    border-radius: 5px;
+    margin-left: 10px;
 }

@@ -15,3 +15,22 @@
     align-items: center;
     justify-content: center;
 }
+.pagination{
+    display:flex;
+    width: 300px;
+    justify-content: space-between;
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+.page-link{
+    color: black;
+    text-decoration-line: none;
+}
+.page-item{
+    
+}
+
+.page-item-active a{
+    color: salmon;
+    text-decoration-line: underline;
+}

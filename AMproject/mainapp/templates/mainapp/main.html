@@ -7,8 +7,8 @@
 
 {% block content %}
     <div class="button_list"> 
-        <a href="{% url 'mainapp:go_search' %}">야생동물검색</a>
-        <a href="{% url 'sub1app:searchRC' %}">구조센터 찾기</a>
-        <a href="{% url 'sub1app:rescue' %}">구조동물 정보 열람</a>
+        <div class="menu"><a href="{% url 'mainapp:go_search' %}"><b>야생동물검색</b></a></div>
+        <div class="menu"><a href="{% url 'sub1app:searchRC' %}"><b>구조센터 찾기</b></a></div>
+        <div class="menu"><a href="{% url 'sub1app:rescue' %}"><b>구조동물 정보 열람</b></a></div>
     </div>
 {% endblock %}
