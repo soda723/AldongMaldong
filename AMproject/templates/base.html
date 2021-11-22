@@ -11,13 +11,15 @@
 </head>
 <body>
     <div id="top">
-        <h3><a href="{% url 'mainapp:main' %}">알동말동</a></h3>
+        <h3 id="title" ><a  href="{% url 'mainapp:main' %}">알동말동</a></h3>
     </div>
-    {% block content %}
-    {% endblock%}
+    <div id="middle">
+        {% block content %}
+        {% endblock %}
+    </div>
     <div id='bottom'>
-        project team ??? 이지원 박윤진<br>
-        copyrightⓒ 2021 All rights reserved by ???
+        project team 알동말동 이지원 박윤진<br>
+        copyrightⓒ 2021 All rights reserved by 알동말동
     </div>    
 </body>
 </html>

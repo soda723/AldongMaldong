@@ -7,4 +7,62 @@
 
 {% block content %}
     <h1>구조 동물 정보 열람</h1>
+    <div class="container">
+        {% for datum in data %}
+        <div class="inbox">
+            <span><b>강</b> : {{datum.animal_class}}<br></span>
+            <span><b>접수번호</b> : {{datum.infoNum}}<br></span>
+            <span><b>국 명</b> : {{datum.name}}<br></span>
+            <span><b>천연기념물</b> : {{datum.natural}}<br></span>
+            <span><b>멸종위기종</b> : {{datum.endangered}}<br></span>
+            <span><b>구조결과</b> : {{datum.result}}<br></span>
+            <span><b>발견장소</b> : {{datum.discoverd_place}}<br></span>
+            <span><b>구조일자</b> : {{datum.date_rescue}}<br></span>
+            <span><b>구조결과일자</b> : {{datum.date_result}}<br></span>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="pages">
+        <ul class="pagination">
+            <!--처음페이지-->
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="?page=1">처음</a>
+            </li>
+            <!-- 이전페이지 -->
+            {% if results.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ data.previous_page_number }}">이전</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">이전</a>
+            </li>
+            {% endif %}
+            <!-- 페이지리스트 -->
+            {% for page_number in data.paginator.page_range %}
+                {% if page_number >= data.number|add:-2 and page_number <= data.number|add:2 %}
+                    {% if page_number == data.number %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+                    </li>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+            <!-- 다음페이지 -->
+            {% if results.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ data.next_page_number }}">다음</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+            </li>
+            {% endif %}
+        </ul>
+        <!-- 페이징처리 끝 -->
+    </div>
 {% endblock %}

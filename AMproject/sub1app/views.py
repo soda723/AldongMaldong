@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import RescueCenter
+from .models import RescueCenter, AnimalInfo
 from django.core.paginator import Paginator
 # Create your views here.
 
@@ -49,5 +49,13 @@ def center_info(request, obj_pk):
 
 def rescue(request):
     context={}
+
+    contents = AnimalInfo.objects.all().order_by('-date_result', '-date_rescue')
+    page = request.GET.get('page', 1) #페이지 디폴트 값1
+    paginator = Paginator(contents, 5)
+    page_obj = paginator.get_page(page)
+
+    context['data'] = page_obj
+
     return render(request,'sub1app/rescue.html', context)
 

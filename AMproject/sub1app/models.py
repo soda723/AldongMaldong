@@ -34,3 +34,17 @@ class RescueCenter(models.Model):
         return f'{self.pk} : {self.name}'
 
 
+class AnimalInfo(models.Model):
+    animal_class = models.CharField(max_length=50)#강
+    infoNum = models.CharField(max_length=50)#접수번호
+    name = models.CharField(max_length=50)#국명
+    natural = models.CharField(max_length=50) #천연기념물여부
+    endangered = models.CharField(max_length=50)#멸종위기종여부
+    date_rescue = models.DateField()#구조일자
+    date_result = models.DateField()#구조결과일자
+    result = models.CharField(max_length=50)#구조결과
+    discoverd_place = models.CharField(max_length=50)#발견장소
+
+    def __str__(self):
+            return f'{self.pk} - 접수번호 : {self.infoNum}, {self.name}'
+
