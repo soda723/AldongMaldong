@@ -7,7 +7,7 @@ django.setup()
 
 from sub1app.models import RescueCenter
 
-CSV_PATH ="./aldongmaldong.csv"
+CSV_PATH ="./aldongmaldongVER2.csv"
 
 count = 1
 with open(CSV_PATH, newline='', encoding='cp949') as csvfile:

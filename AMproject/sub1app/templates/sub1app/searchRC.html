@@ -3,6 +3,7 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static 'sub1app/searchRC.css' %}"  type='text/css'> 
+    
 {% endblock %}
 
 {% block content %}
@@ -45,7 +46,7 @@
             <tbody>
             {% for data in results %}
             <tr>
-                <td>{{ data.pk }}번</td>
+                <td><span class="linum">{{ data.pk }}</span>번</td>
                 <td class="link"><a href="{% url 'sub1app:center_info' data.pk %}">{{ data.name }} </a></td>
                 <td>{{ data.address_road}}</td>
                 <td>{{ data.tel }}</td>
@@ -99,5 +100,14 @@
         </ul>
         <!-- 페이징처리 끝 -->
     </div>
-
+    <script>
+        var orilist = document.getElementsByClassName("linum");
+        // console.log(orilist);
+        for(var i = 0; i<orilist.length;i++ ){
+            var ori =orilist.item(i).innerHTML;
+            // console.log(ori);
+            var newnum = ori - 95;
+            document.getElementsByClassName("linum")[i].innerHTML = newnum;
+        }
+    </script>
 {% endblock %}
