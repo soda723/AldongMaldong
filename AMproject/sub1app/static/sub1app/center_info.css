@@ -1,0 +1,22 @@
+ul{
+    list-style-type: none;
+    
+}
+table{
+    text-align:center;
+    border-collapse:collapse;
+    margin-bottom:5px;
+}
+tr, td{
+    border:solid 3px #AEDBBC;
+}
+thead{
+    background:#AEDBBC;
+    font-size:13px;
+}
+.tdh{
+    background:#AEDBBC
+}
+.b_opt{
+    color:#4A9260;
+}

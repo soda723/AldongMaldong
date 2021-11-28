@@ -1,0 +1,25 @@
+.result_info{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.image_box{
+    width: 200px;
+    height: 200px;
+    background: #EAEFA9;
+    border-radius:15px;
+    border: white solid 1px;
+}
+#go_rc{
+    background:#FCC0BE;
+    text-decoration: none;
+    color:gray;
+    border-radius: 10px;
+    border: 1px solid white;
+    width:200px;
+    height:30px;
+    text-align:center;
+    vertical-align:middle;
+    line-height:30px;/* height와 동일하게 지정 */
+}

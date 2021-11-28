@@ -2,3 +2,34 @@
     display: flex;
     flex-direction: column;
 }
+#imgform{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}
+#img_search_btn{
+    background:#FCC0BE;
+    border: white;
+    border-radius: 11px;
+    color:white;
+    font-size:18px;
+    width:100px;
+    margin-top:15px;
+}
+.thumbnail{
+    width:200px;
+    height:200px;
+    background:#EAEFA9;
+    display:flex;
+    justify-content:center;
+}
+#files::file-selector-button{
+    /* display:none; */
+    background-color:#BFDFE3;
+    color: gray;
+    border:white;
+    width:100px;
+    border-radius:15px;
+}

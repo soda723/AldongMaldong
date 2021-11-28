@@ -6,8 +6,7 @@
     height: 350px;
 }
 .menu{
-    border: #ede8ea 1px solid;
-    background:#faf5e6;
+    border: white 1px solid;
     border-radius:360px;
     width: 250px;
     height: 70px;
@@ -18,7 +17,17 @@
 
 }
 .menu a{
-    color: salmon;
+    color: gray;
     text-decoration: none;
     font-size:20px;
+}
+#no1{
+    background-color:#FCC0BE ;
+}
+#no2{
+    background-color:#EAEFA9;
+    
+}
+#no3{
+    background-color:#BFDFE3 ;
 }

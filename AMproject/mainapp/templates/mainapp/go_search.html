@@ -6,15 +6,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>이미지 검색</h1>
-<span>사진을 업로드 하세요</span>
+<h2>이미지 검색</h2>
 <form action="{% url 'mainapp:search_result' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    <input type="file" name="image" id='files'><br>
-    <div class="thumbnail">
-        <img id="image" style="width: 200px;"/>
+    <div id="imgform">
+        <input type="file" name="image" id='files'><br>
+        <div class="thumbnail">
+            <img id="image" style="width: 200px;"/>
+        </div>
+        <input id="img_search_btn" type="submit" value="검색">
     </div>
-    <input type="submit" value="검색">
 </form>
     
 <script>

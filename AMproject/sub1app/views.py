@@ -52,7 +52,7 @@ def rescue(request):
 
     contents = AnimalInfo.objects.all().order_by('-date_result', '-date_rescue')
     page = request.GET.get('page', 1) #페이지 디폴트 값1
-    paginator = Paginator(contents, 5)
+    paginator = Paginator(contents, 6)
     page_obj = paginator.get_page(page)
 
     context['data'] = page_obj

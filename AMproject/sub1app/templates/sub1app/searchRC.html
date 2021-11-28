@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1>구조센터 찾기</h1>
+    <h2>구조센터 찾기</h2>
     <form actions="{% url 'sub1app:searchRC' %}" method = "POST">
         {% csrf_token %}
         <div class="options">
@@ -36,7 +36,7 @@
         <table class="data_table">
             <thead>
             <tr>
-                <td><B>번호</B></td>
+                <td style="width: 50px;"><B>번호</B></td>
                 <td><B>센터명</B></td>
                 <td><B>주소</B></td>
                 <td><B>전화번호</B></td>

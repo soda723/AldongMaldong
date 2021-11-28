@@ -6,6 +6,8 @@
     display:flex;
     flex-direction:column;
     border: 1px solid gray;
+
+    overflow:auto;
 }
 .pagination{
     display:flex;
@@ -25,7 +27,7 @@
     color: salmon;
 } */
 .page-item-active a{
-    color: salmon;
+    color: #4A9260;
     text-decoration-line: underline;
 }
 .data_table{
@@ -33,7 +35,7 @@
     min-width:300px;
 }
 .link a{
-    color: salmon;
+    color: #4A9260;
     text-decoration-line: none;
 }
 .options{
@@ -45,9 +47,12 @@
     margin-bottom: 20px;
 }
 #searchbtn{
-    background-color: salmon;
+    background-color: #4A9260;
     color: white;
-    border: salmon solid 0.5px;
+    border: #4A9260 solid 0.5px;
     border-radius: 5px;
     margin-left: 10px;
+}
+td{
+    text-align: center;
 }

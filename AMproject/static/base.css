@@ -17,14 +17,14 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: salmon;
+    background-color: #AEDBBC;
     box-shadow: 0 0 10px gray;
     padding-right: 5px;
 }
 
 
 #bottom{
-    background-color: salmon;
+    background-color: #AEDBBC;
     margin-top: 10px;
     font-weight: 100;
     font-size: 11px;
@@ -41,7 +41,7 @@ body{
     justify-content: center;
 }
 #title a{
-    color: white;
+    color: #4A9260;
     text-decoration: none;
 }
 

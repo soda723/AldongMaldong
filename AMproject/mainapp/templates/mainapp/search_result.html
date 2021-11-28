@@ -6,20 +6,17 @@
 {% endblock %}
 
 {% block content %}
-<div class="contents">
-    <h1>야생동물 이미지 검색 결과</h1>
-    <div class="result_info">
-        <div class="image_box" style="width: 200px;height: 200px; border: 3px solid red;">
-            <img src="" alt="">
-        </div>
-        <h3>0000 입니다.</h3>
-        <div class="explain">
-            결과에 따른 설명<br>
-            ex)천연기념물 000 입니다.<br>
-            ex) 멸종위기종 000입니다. 등등 나중에 데이터 추가. <br>
-        </div>
-        <a href="{% url 'sub1app:searchRC' %}">근처 구조센터 찾기</a>
+<h2>야생동물 이미지 검색 결과</h2>
+<div class="result_info">
+    <div class="image_box" >
+        <img src="" alt="">
     </div>
-
+    <h3>0000 입니다.</h3>
+    <div class="explain">
+        결과에 따른 설명<br>
+        ex)천연기념물 000 입니다.<br>
+        ex) 멸종위기종 000입니다. 등등 나중에 데이터 추가. <br>
+    </div>
+    <a id="go_rc" href="{% url 'sub1app:searchRC' %}">근처 구조센터 찾기</a>
 </div>
 {% endblock %}
