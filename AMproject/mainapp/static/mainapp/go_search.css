@@ -21,9 +21,10 @@
 .thumbnail{
     width:200px;
     height:200px;
-    background:#EAEFA9;
+    background:url('image_info.png');
     display:flex;
     justify-content:center;
+    
 }
 #files::file-selector-button{
     /* display:none; */
