@@ -51,5 +51,9 @@ def result_str(imagepath):
 
     #노이즈 제거???
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
+    try:
+        resultclass=classes[class_ids[0]]
+    except:
+        resultclass="찾을 수 없습니다."
 
-    return classes[class_ids[0]]
+    return resultclass

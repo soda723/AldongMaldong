@@ -6,16 +6,28 @@
 {% endblock %}
 
 {% block content %}
-<h2>야생동물 이미지 검색 결과</h2>
+<h2>이미지 검색 결과</h2>
 <div class="result_info">
     <div class="image_box" >
         <img src="../../{{ file_path }}" alt="" style="width:200px; height:200px;">
     </div>
-    <h3>{{ what }}입니다.</h3>
+    <h3 id="objresult">{{ what }}입니다.</h3>
     <div class="explain">
-        결과에 따른 설명<br>
-        ex)천연기념물 000 입니다.<br>
-        ex) 멸종위기종 000입니다. 등등 나중에 데이터 추가. <br>
+        {% if infodata %}
+        <div class = "infos">
+            {% if infodata.endangered %}
+            <span>멸종 위기 동물입니다.</span>
+            {% elif infodata.protected %}
+            <span>보호종입니다.</span>
+            {% endif %}
+            <span id="small">{{infodata.explain}}
+                {{infodata.etc}}</span>
+        </div>
+        {% else %}
+        <div>
+            정보가 없습니다.
+        </div>
+        {% endif %}
     </div>
     <a id="go_rc" href="{% url 'sub1app:searchRC' %}">근처 구조센터 찾기</a>
 </div>

@@ -23,3 +23,17 @@
     vertical-align:middle;
     line-height:30px;/* height와 동일하게 지정 */
 }
+.infos{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+#small{
+    font-size: 13px ;
+    color : gray;
+}
+#objresult{
+    margin-bottom: 0px;
+}
