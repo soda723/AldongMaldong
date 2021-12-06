@@ -4,9 +4,15 @@ print(cv2.__version__)
 
 def result_str(imagepath):
 
-    path_w = ".\yolo_object_detection\yolov3.weights"
-    path_cfg = ".\yolo_object_detection\yolov3.cfg"
-    path_name = ".\yolo_object_detection\coco.names"
+    # basic model
+    # path_w = ".\yolo_object_detection\yolov3.weights"
+    # path_cfg = ".\yolo_object_detection\yolov3.cfg"
+    # path_name = ".\yolo_object_detection\coco.names"
+
+    # mymodel
+    path_w = ".\yolo_object_detection\yolov3real.weights"
+    path_cfg = ".\yolo_object_detection\yolov3_testing.cfg"
+    path_name = ".\yolo_object_detection\yolov3real.names"
 
     #yolo 로드
     net = cv2.dnn.readNet(path_w, path_cfg)

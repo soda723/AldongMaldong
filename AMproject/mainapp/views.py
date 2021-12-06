@@ -26,13 +26,19 @@ def search_result(request):
 
             #결과값 받아오기
             what = result_str(file_path)
-            context['what'] = what
+            if (what != "찾을 수 없습니다."):
+                context['what'] = what + "입니다."
+            else:
+                context['what'] = what
             
             #사용후 파일 지우기
             #new_image.delete()
 
             # 동물정보 표시
-            infodata = Info.objects.get(name = what)
+            try:
+                infodata = Info.objects.get(name = what)
+            except:
+                infodata = None
             print(infodata)
             context['infodata'] = infodata
 
